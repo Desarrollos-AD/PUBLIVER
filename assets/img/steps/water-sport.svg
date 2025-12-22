@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="22"
+   height="22"
+   viewBox="0 0 22 22"
+   fill="none"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="water-sport.svg"
+   xml:space="preserve"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+     id="defs1" /><sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="12.952911"
+     inkscape:cx="6.176218"
+     inkscape:cy="17.332012"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" /><style
+     type="text/css"
+     id="style1">
+	.isometric_acht{fill:#F05A28;}
+	.isometric_tien{fill:#7BD6C4;}
+	.isometric_twaalf{fill:#569080;}
+	.isometric_dertien{fill:#225B49;}
+	.st0{fill:#FFBB33;}
+	.st1{fill:#BE1E2D;}
+	.st2{fill:#F29227;}
+	.st3{fill:#FF7344;}
+	.st4{fill:#F8F7C5;}
+	.st5{fill:#F5DF89;}
+	.st6{fill:#6B9086;}
+	.st7{fill:none;}
+	.st8{fill:#72C0AB;}
+	.st9{fill:#AD9A74;}
+	.st10{fill:#F2D76C;}
+	.st11{fill:#F28103;}
+	.st12{fill:#225B49;}
+	.st13{fill:#7BD6C4;}
+	.st14{fill:#F05A28;}
+</style><g
+     id="g3"
+     transform="matrix(1.0482125,0,0,1.0482125,-8.0167857,-5.8772622)">
+	<polygon
+   class="isometric_dertien"
+   points="28,12.819 8,8.938 8,12.453 14.722,24 18.003,19.281 25.49,23.569 27.15,22.611 27.15,19.095 23.972,17.261 28,16.334 "
+   id="polygon1" />
+	<polygon
+   class="isometric_tien"
+   points="18.003,15.765 25.49,20.053 27.15,19.095 19.618,14.747 28,12.819 8,8.938 14.722,20.485 "
+   id="polygon2" />
+	<path
+   class="isometric_twaalf"
+   d="m 25.5,20.047 v 3.521 H 25.49 L 18.063,19.28 v -3.515 l 7.427,4.288 z M 14.687,20.425 8,8.938 v 3.516 L 14.687,24 Z"
+   id="path2" />
+	<path
+   class="isometric_acht"
+   d="M 8,12.453 V 8.938 L 18.213,10.92 C 17.278,7.507 9.98,6.091 5.727,8.546 1.512,10.979 3.844,15.237 9.921,15.752 Z"
+   id="path3" />
+</g></svg>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1440"
+   height="724"
+   viewBox="0 0 1440 724"
+   fill="none"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="hero-bg.svg"
+   xml:space="preserve"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.39578338"
+     inkscape:cx="682.19136"
+     inkscape:cy="440.89775"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" /><g
+     opacity="0.3"
+     filter="url(#filter0_f)"
+     id="g1"
+     transform="translate(237.40594,368.63472)"
+     style="fill:#000000;fill-opacity:0.611987"><ellipse
+       cx="-180.528"
+       cy="188.597"
+       rx="239.472"
+       ry="248.43201"
+       fill="#d5aee4"
+       id="ellipse1"
+       style="fill:#000000;fill-opacity:0.611987" /></g><path
+     d="m 770.94017,216.94673 c -40.4,-68.8 104.44547,-173.293814 93.48548,-219.4673063 l 563.27785,-101.0000037 64.5,271.5 -38.5,601 c -78.67,1 -232.6608,25.65881 -305.0608,-12.34119 -90.5,-47.5 -134.2103,-11.64552 -166.33184,-158.84155 -75.00304,-40 -83.07442,-143.51205 -109.07442,-183.51205 -26,-40 -51.79627,-111.3379 -102.29627,-197.3379 z"
+     fill="#fff1da"
+     id="path1"
+     style="fill:#fdc50d;fill-opacity:1"
+     sodipodi:nodetypes="sccccscss" /><defs
+     id="defs1"><filter
+       id="filter0_f"
+       x="-570"
+       y="-209.836"
+       width="778.945"
+       height="796.864"
+       filterUnits="userSpaceOnUse"
+       color-interpolation-filters="sRGB"><feFlood
+         flood-opacity="0"
+         result="BackgroundImageFix"
+         id="feFlood1" /><feBlend
+         mode="normal"
+         in="SourceGraphic"
+         in2="BackgroundImageFix"
+         result="shape"
+         id="feBlend1" /><feGaussianBlur
+         stdDeviation="75"
+         result="effect1_foregroundBlur"
+         id="feGaussianBlur1" /></filter><style
+       id="style1">
+      .st0 {
+        fill: #e9463d;
+      }
+
+      .st1 {
+        fill: #010101;
+      }
+
+      .st2 {
+        fill: #fdc50d;
+      }
+    </style></defs></svg>
