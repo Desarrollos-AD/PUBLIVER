@@ -164,8 +164,12 @@ function Terminos() {
                   fuentes públicas con fines ilustrativos e informativos.
                 </p>
                 <p>
-                  Algunas imágenes utilizadas en este sitio han sido extraídas
-                  de Freepik.
+                  Las imágenes utilizadas en este sitio han sido extraídas
+                  de <a href="https://www.freepik.es/">Freepik.</a>
+                </p>
+                <p>
+                  Los iconos utilizados han sido extraídos de
+                  <a href="https://www.flaticon.es/"> Flaticon</a>
                 </p>
               </div>
               <div class="mb-4 text-center">

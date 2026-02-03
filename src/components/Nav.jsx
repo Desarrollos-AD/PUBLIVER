@@ -1,15 +1,28 @@
 import logo from "../assets/img/logo.svg";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function Nav() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const goToSection = (id) => {
+    if (location.pathname !== "/") {
+      // ir a inicio y guardar sección
+      navigate("/", { state: { scrollTo: id } });
+    } else {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <nav
       className=" navbar navbar-expand-lg navbar-light fixed-top py-5 d-block backdrop padding-transition "
       data-navbar-on-scroll="data-navbar-on-scroll"
     >
       <div className="container">
-        <a className="navbar-brand" href="index.html">
+        <button onClick={() => navigate("/")}>
           <img src={logo} height="48" alt="logo" />
-        </a>
+        </button>
         <button
           className="navbar-toggler"
           type="button"
@@ -27,40 +40,44 @@ function Nav() {
         >
           <ul className="navbar-nav ms-auto pt-2 pt-lg-0 font-base align-items-lg-center align-items-start">
             <li className="nav-item px-3 px-xl-4">
-              <a
+              <button
+                onClick={() => goToSection("inicio")}
                 className="nav-link"
-                aria-current="page"
-                href="#service"
+              >
+                Inicio
+              </button>
+            </li>
+            <li className="nav-item px-3 px-xl-4">
+              <button
+                onClick={() => goToSection("servicios")}
+                className="nav-link"
               >
                 Servicios
-              </a>
+              </button>
             </li>
             <li className="nav-item px-3 px-xl-4">
-              <a
+              <button
+                onClick={() => goToSection("nosotros")}
                 className="nav-link"
-                aria-current="page"
-                href="#destination"
               >
                 Nosotros
-              </a>
+              </button>
             </li>
             <li className="nav-item px-3 px-xl-4">
-              <a
+              <button
+                onClick={() => goToSection("catalogo")}
                 className="nav-link"
-                aria-current="page"
-                href="#booking"
               >
-                Catalogo
-              </a>
+                Catálogo
+              </button>
             </li>
             <li className="nav-item px-3 px-xl-4">
-              <a
+              <button
+                onClick={() => goToSection("contacto")}
                 className="nav-link"
-                aria-current="page"
-                href="#foot"
               >
                 Contacto
-              </a>
+              </button>
             </li>
           </ul>
         </div>

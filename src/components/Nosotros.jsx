@@ -1,16 +1,15 @@
 import dest1 from "../assets/img/dest/dest1.jpg";
 import dest2 from "../assets/img/dest/dest2.jpg";
-import shape from "../assets/img/dest/shape.svg";
 import logo from "../assets/img/logo_compreto.png";
 import "./Nosotros.css";
-import { Valores } from "./Valores";
+import Valores from "./Valores";
 
 function Nosotros() {
   return (
-    <section className="pt-5 nosotros " id="destination">
+    <section className="pt-5 nosotros " id="nosotros">
       <div className="container">
         <div className="quienes_somos">
-          <h2 className="text-secondary">Nosotros</h2>
+          <h2>Nosotros</h2>
           <h3 className="fs-xl-10 fs-lg-8 fs-7 fw-bold text-capitalize text-center">
             ¿QUIÉNES SOMOS?
           </h3>
@@ -75,7 +74,7 @@ function Nosotros() {
 
         <div className="compromiso">
           <div className="mb-3 text-center">
-            <h2 className="text-secondary">NUESTRO COMPROMISO </h2>
+            <h2>NUESTRO COMPROMISO </h2>
             <h3 className="fs-xl-10 fs-lg-8 fs-7 fw-bold text-capitalize">
               ES CONTIGO
             </h3>
@@ -137,26 +136,36 @@ function Nosotros() {
             Sobre nosotros
           </h2>
           <div className="valores__mision">
-            <h3>Misión</h3>
-            <p>
-              Brindar soluciones integrales de publicidad, mercadotecnia e
-              investigación de mercados que impulsen el posicionamiento y
-              crecimiento de las marcas, ayudando a nuestros clientes a tomar
-              decisiones estratégicas mediante información confiable,
-              creatividad efectiva y una comunicación clara orientada a
-              resultados.
-            </p>
+            <div className="valores__mision--content">
+              <h3>Misión</h3>
+              <p>
+                Brindar soluciones integrales de publicidad, mercadotecnia e
+                investigación de mercados que impulsen el posicionamiento y
+                crecimiento de las marcas, ayudando a nuestros clientes a tomar
+                decisiones estratégicas mediante información confiable,
+                creatividad efectiva y una comunicación clara orientada a
+                resultados.
+              </p>
+            </div>
+            <div className="valores__mision--img">
+              <img src="/src/assets/img/logro.png" alt="Imagen Misión" />
+            </div>
           </div>
           <div className="valores__vision">
-            <h3>Visión</h3>
-            <p>
-              Ser la empresa líder en consultoría publicitaria y mercadotecnia
-              en la región, reconocida por su capacidad de análisis, creatividad
-              estratégica y efectividad en la ejecución, convirtiéndonos en el
-              socio estratégico de marcas y organizaciones que buscan destacar,
-              crecer y consolidarse en mercados competitivos.
-            </p>
-          
+            <div className="valores__vision--content">
+              <h3>Visión</h3>
+              <p>
+                Ser la empresa líder en consultoría publicitaria y mercadotecnia
+                en la región, reconocida por su capacidad de análisis,
+                creatividad estratégica y efectividad en la ejecución,
+                convirtiéndonos en el socio estratégico de marcas y
+                organizaciones que buscan destacar, crecer y consolidarse en
+                mercados competitivos.
+              </p>
+            </div>
+            <div className="valores__vision--img">
+              <img src="/src/assets/img/vision.png" alt="Imagen Visión" />
+            </div>
           </div>
           <div className="valores__valores">
             <h3 className="fs-xl-5 fs-lg-8 fs-5 fw-bold text-capitalize text-center">
@@ -167,9 +176,6 @@ function Nosotros() {
           </div>
         </div>
       </div>
-      <div className="position-absolute start-100 bottom-40 translate-middle-x d-none d-xl-block ms-xl-n4">
-              <img src={shape} alt="destination hol" />
-            </div>
     </section>
   );
 }

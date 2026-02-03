@@ -1,9 +1,9 @@
 import hero from "../assets/img/hero/hero-img.png";
-import "./Header.css"
+import "./Header.css";
 
 function Header() {
   return (
-    <section>
+    <section id="inicio">
       <div className="bg-holder"></div>
       <div className="container">
         <div className="row align-items-center">
@@ -18,20 +18,17 @@ function Header() {
             <h4 className="fw-bold mb-3  text-danger">
               Convertimos tus ideas en impactos.
             </h4>
-            <h1
-              className="hero-title fw-bold  mb-3"
-              // style="color: black !important;"
-            >
+            <h1 className="hero-title fw-bold  mb-3">
               Haz que tu marca brille.
             </h1>
             <p className="mb-4 fw-medium">
-              soluciones estratégicas para que tu negocio llegue más lejos.{" "}
+              soluciones estratégicas para que tu negocio llegue más lejos.
               <br className="d-none d-xl-block" />
               Nos aseguramos de que tu mensaje llegue a la audiencia correcta en
-              el momento adecuado. <br className="d-none d-xl-block" />{" "}
+              el momento adecuado.
+              <br className="d-none d-xl-block" />
             </p>
             <div className="text-center text-md-start">
-              {" "}
               <a
                 className="btn btn-primary btn-lg me-md-4 mb-3 mb-md-0 border-0 primary-btn-shadow"
                 href="#testimonial"
@@ -50,7 +47,6 @@ function Header() {
                   <div className="modal-content">
                     <iframe
                       className="rounded"
-                      // style="width:100%;max-height:500px;"
                       height="500px"
                       src="https://www.youtube.com/embed/_lhdhL4UDIo"
                       title="YouTube video player"
@@ -64,8 +60,6 @@ function Header() {
           </div>
         </div>
       </div>
-
-  
     </section>
   );
 }

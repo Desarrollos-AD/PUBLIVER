@@ -1,111 +1,200 @@
-import { cn } from "@/lib/utils";
-import { Marquee } from "@/registry/magicui/marquee";
-import "./valores.css";
+import { useEffect, useRef } from "react";
 
-const reviews = [
+import "./Valores.css";
+const carouselDuplicates = 3;
+
+const valores = [
   {
     name: "Estrategia",
     body: "Diseñamos cada proyecto con enfoque analítico y visión comercial.",
-    img: "https://avatar.vercel.sh/jack",
+    img: "/src/assets/img/lista.png",
   },
   {
     name: "Creatividad",
     body: " Transformamos ideas en mensajes que conectan y generan impacto.",
-    img: "https://avatar.vercel.sh/jill",
+    img: "/src/assets/img/lista.png",
   },
   {
     name: "Compromiso",
     body: " Acompañamos a nuestros clientes en cada etapa del proceso.",
-    img: "https://avatar.vercel.sh/john",
+    img: "/src/assets/img/lista.png",
   },
-  {
-    name: "Estrategia",
-    body: "  Diseñamos cada proyecto con enfoque analítico y visión comercial.",
-    img: "https://avatar.vercel.sh/jane",
-  },
+
   {
     name: "Confianza",
     body: " Construimos relaciones transparentes y duraderas.",
-    img: "https://avatar.vercel.sh/jenny",
+    img: "/src/assets/img/lista.png",
   },
   {
     name: "Innovación",
     body: "Aplicamos herramientas, métodos y soluciones actuales para cada mercado.",
-    img: "https://avatar.vercel.sh/james",
+    img: "/src/assets/img/lista.png",
   },
   {
     name: "Responsabilidad",
     body: "Actuamos con ética, profesionalismo y enfoque en resultados reales.",
-    img: "https://avatar.vercel.sh/james",
+    img: "/src/assets/img/lista.png",
   },
 ];
 
-const firstRow = reviews.slice(0, reviews.length / 2);
-const secondRow = reviews.slice(reviews.length / 2);
+const lerp = (a, b, t) => a + (b - a) * t;
 
-const ReviewCard = ({ img, name, body }) => {
-  return (
-    <figure
-      className={cn(
-        "relative h-full w-64 cursor-pointer rounded-xl p-4",
-        "bg-white/5 backdrop-blur-md",
-        "border border-white/10",
-        "shadow-[0_0_0_1px_rgba(255,255,255,0.04),0_4px_15px_rgba(0,0,0,0.4)]",
-        "transition-all duration-300",
-        "hover:bg-white/10 hover:border-white/20",
-      )}
-    >
-      <div className="flex items-center gap-3">
-        <img
-          src={img}
-          alt={name}
-          className="card__img rounded-full ring-2 ring-white/10"
-        />
+const getTouchMidpoint = (touches) => {
+  let midpoint = {
+    x: touches[0].clientX,
+    y: touches[0].clientY,
+  };
 
-        <div className="flex flex-col">
-          <figcaption className="">
-            {name}
-          </figcaption>
-        </div>
-      </div>
+  for (let i = 1; i < touches.length; i++) {
+    midpoint.x = lerp(midpoint.x, touches[i].clientX, 0.5);
+    midpoint.y = lerp(midpoint.y, touches[i].clientY, 0.5);
+  }
 
-      <blockquote className="mt-3 text-sm text-white/70 leading-relaxed">
-        {body}
-      </blockquote>
-    </figure>
-  );
+  return midpoint;
 };
 
-export function Valores() {
+export default function Valores() {
+  const carouselRef = useRef(null);
+  const contentRef = useRef(null);
+  const AUTO_SCROLL_SPEED = 1.5;
+
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    const carouselContent = contentRef.current;
+
+    if (!carousel || !carouselContent) return;
+
+    const prefersReducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+    const hasFinePointer = matchMedia("(pointer: fine)");
+
+    let carouselHasMouse = false;
+    let carouselTouches = 0;
+    let lastMouseX = null;
+    let lastTouchX = null;
+    let scrollDelta = AUTO_SCROLL_SPEED;
+
+    const handleTouchRemove = (event) => {
+      carouselTouches -= event.changedTouches.length;
+      if (carouselTouches <= 0 && !carouselHasMouse) {
+        lastTouchX = null;
+      }
+    };
+
+    const updateScroll = () => {
+      carousel.scrollLeft += scrollDelta;
+
+      if (carouselHasMouse || carouselTouches > 0) {
+        scrollDelta = lerp(scrollDelta, 0, 0.2);
+      } else if (!prefersReducedMotion.matches) {
+        scrollDelta = lerp(scrollDelta, AUTO_SCROLL_SPEED, 0.08);
+      }
+
+      requestAnimationFrame(updateScroll);
+    };
+
+    const onMouseDown = () => (carouselHasMouse = true);
+
+    const onMouseUp = () => {
+      carouselHasMouse = false;
+      lastMouseX = null;
+    };
+
+    const onMouseMove = (event) => {
+      if (carouselHasMouse) {
+        if (lastMouseX !== null) {
+          scrollDelta = lastMouseX - event.clientX;
+        }
+        lastMouseX = event.clientX;
+      }
+    };
+
+    const onWheel = (event) => {
+      if (hasFinePointer.matches && event.shiftKey) {
+        event.preventDefault();
+        const multiplier = prefersReducedMotion.matches ? 2 : 0.1;
+        scrollDelta += event.deltaY * multiplier;
+      }
+    };
+
+    const onTouchStart = (event) => {
+      if (lastTouchX === null) {
+        lastTouchX = getTouchMidpoint(event.touches).x;
+      }
+      carouselTouches += event.changedTouches.length;
+    };
+
+    const onTouchMove = (event) => {
+      if (lastTouchX !== null) {
+        const midpoint = getTouchMidpoint(event.touches);
+        scrollDelta = -(midpoint.x - lastTouchX);
+        lastTouchX = midpoint.x;
+      }
+    };
+
+    const onScroll = () => {
+      const content = carousel.children[1];
+      const rect = content.getBoundingClientRect();
+      if (rect.left > window.innerWidth) {
+        carousel.scrollLeft += rect.width;
+      } else if (rect.right < 0) {
+        carousel.scrollLeft -= rect.width;
+      }
+    };
+
+    carousel.addEventListener("mousedown", onMouseDown);
+    carousel.addEventListener("wheel", onWheel);
+    carousel.addEventListener("touchstart", onTouchStart);
+    carousel.addEventListener("scroll", onScroll);
+
+    window.addEventListener("mouseup", onMouseUp);
+    window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("touchmove", onTouchMove);
+    window.addEventListener("touchend", handleTouchRemove);
+    window.addEventListener("touchcancel", handleTouchRemove);
+
+    for (let i = 0; i < carouselDuplicates; i++) {
+      const before = carouselContent.cloneNode(true);
+      const after = carouselContent.cloneNode(true);
+
+      before.setAttribute("aria-hidden", "true");
+      after.setAttribute("aria-hidden", "true");
+
+      carousel.prepend(before);
+      carousel.append(after);
+    }
+
+    carousel.scrollLeft += carouselContent.offsetWidth * carouselDuplicates;
+    requestAnimationFrame(updateScroll);
+
+    return () => {
+      carousel.removeEventListener("mousedown", onMouseDown);
+      carousel.removeEventListener("wheel", onWheel);
+      carousel.removeEventListener("touchstart", onTouchStart);
+      carousel.removeEventListener("scroll", onScroll);
+
+      window.removeEventListener("mouseup", onMouseUp);
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("touchmove", onTouchMove);
+      window.removeEventListener("touchend", handleTouchRemove);
+      window.removeEventListener("touchcancel", handleTouchRemove);
+    };
+  }, []);
+
   return (
-    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-      {/* PRIMER MARQUEE */}
-      <Marquee pauseOnHover className="[--duration:20s]">
-        <div className="flex w-max gap-4">
-          {firstRow.map((review) => (
-            <ReviewCard key={review.name} {...review} />
+    <>
+      <div className="carousel" ref={carouselRef}>
+        <div className="carousel-content" ref={contentRef}>
+          {valores.map((lang) => (
+            <div className="valores__card" key={lang.name}>
+              <div className="titulo">
+                <img src={lang.img} alt="Icono validación" />
+                <h3>{lang.name}</h3>
+              </div>
+              <p>{lang.body}</p>
+            </div>
           ))}
         </div>
-
-        <div className="flex w-max gap-4">
-          {firstRow.map((review) => (
-            <ReviewCard key={review.name + "-dup"} {...review} />
-          ))}
-        </div>
-      </Marquee>
-
-      {/* SEGUNDO MARQUEE (REVERSE) */}
-      <Marquee reverse pauseOnHover className="[--duration:20s]">
-        {secondRow.map((review) => (
-          <ReviewCard key={review.name} {...review} />
-        ))}
-        {secondRow.map((review) => (
-          <ReviewCard key={review.name + "-dup"} {...review} />
-        ))}
-      </Marquee>
-
-      <div className="from-background pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r" />
-      <div className="from-background pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l" />
-    </div>
+      </div>
+    </>
   );
 }

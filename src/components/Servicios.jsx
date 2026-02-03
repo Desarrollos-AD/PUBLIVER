@@ -6,7 +6,7 @@ import icono4 from "../assets/img/category/icon4.png";
 
 function Servicios() {
   return (
-    <section className="pt-5 pt-md-9" id="service">
+    <section className="pt-5 pt-md-9" id="servicios">
       <div className="container">
         <div className="position-absolute z-index--1 end-0 d-none d-lg-block">
           <img src={shape} alt="service" />

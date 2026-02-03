@@ -8,7 +8,7 @@
     h2 {
         text-align: center;
         margin-bottom: 30px;
-        color: var(--bs-gray);
+        color:#ffffff;
     }
 }
 
@@ -33,7 +33,6 @@
             width: 100%;
         }
     }
-
 }
 
 .quienes_somos__puntos--info {
@@ -42,13 +41,18 @@
     h3 {
         margin: 30px;
     }
-
 }
-.compromiso{
+
+.compromiso {
     margin: 50px 0;
 
-    h3{
+    h2 {
+        color: #ffffff;
+    }
+
+    h3 {
         margin-bottom: 40px;
+
     }
 }
 
@@ -68,19 +72,20 @@
 
 .card__pilares--pilar {
     flex: 1;
-    display:flex;
+    display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     border-right: 2px solid #F1A501;
-
+    height: 340px;
     padding-right: 25px;
+
     h4 {
         margin-bottom: 20px;
     }
-}
 
-.card__pilares--pilar:last-child{
-    border: none;
+    p{
+        height: 60%;
+    }
 }
 
 .card__pilares--pilar::before {
@@ -105,35 +110,120 @@
     margin-right: 8px;
 }
 
-.contigo__conten2, .contigo__conten1{
+.contigo__conten1,
+.contigo__conten2 {
     display: flex;
-    gap: 10px;
+    flex-direction: column;
     margin-top: 10px;
+    align-items: center;
+    gap: 10px;
 }
 
-.contigo__conten1--info, .contigo__conten2--info, .contigo__conten1--img,
-.contigo__conten2--img{
+@media (min-width:991px) {
+
+    .contigo__conten2,
+    .contigo__conten1 {
+        flex-direction: row;
+        align-items: normal;
+    }
+
+    .contigo__conten2 {
+        flex-direction: row-reverse;
+    }
+}
+
+.contigo__conten1--info,
+.contigo__conten2--info,
+.contigo__conten1--img,
+.contigo__conten2--img {
     background: rgb(255, 255, 255);
 
     border-radius: 20px;
     color: #000;
 }
-.contigo__conten2--info, .contigo__conten1--info{
+
+.contigo__conten2--info,
+.contigo__conten1--info {
     padding: 40px;
     display: flex;
     align-items: center;
 }
 
-.contigo__conten2{
-    flex-direction: row-reverse;
-}
-.valores{
-    h2{
+
+.valores {
+    h2 {
         margin: 40px 0;
     }
 }
-.valores__valores{
-    h3{
+
+.valores__valores {
+    h3 {
         margin: 40px 0;
     }
 }
+
+.quienes_somos--des,
+.card__pilares {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width:899px) {
+        flex-direction: row;
+    }
+}
+
+@media (min-width:899px) {
+    .card__pilares--pilar:last-child {
+        border: none;
+    }
+}
+
+.valores__mision,
+.valores__vision {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+
+    @media (min-width:899px) {
+        flex-direction: row;
+        align-items: normal;
+    }
+}
+
+.valores__mision h3,
+.valores__vision h3 {
+    text-align: center;
+}
+
+.valores__vision {
+    margin: 50px 0;
+
+    @media (min-width:899px) {
+        flex-direction: row-reverse;
+    }
+}
+
+.valores__mision--content,
+.valores__vision--content {
+    flex: 1;
+}
+
+.valores__mision--img,
+.valores__vision--img {
+    flex: 1;
+    width: 200px;
+    height: 200px;
+    background-color: #F1A501;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.valores__mision--img img,
+.valores__vision--img img {
+    width: 150px;
+    height: 150px;
+}
+

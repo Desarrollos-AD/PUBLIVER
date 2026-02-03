@@ -3,7 +3,7 @@ import water from "../assets/img/steps/water-sport.svg";
 
 function Eligenos() {
   return (
-    <section id="booking">
+    <section id="catalogo">
       <div className="container">
         <div className="row justify-content-center align-items-center">
           <div className="col-12 col-md-8 col-lg-6">

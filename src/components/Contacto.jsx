@@ -6,10 +6,7 @@ function Contacto() {
   return (
     <section class="pt-6">
       <div class="container">
-        <div
-          class="py-8 px-5 position-relative text-center"
-          //   style="background-color: rgba(204, 95, 121, 0.2);border-radius: 38px 20px 20px 20px;"
-        >
+        <div class=" position-relative text-center">
           <div class="position-absolute start-100 top-0 translate-middle ms-md-n3 ms-n4 mt-3">
             <img src={send} alt="send icon" />
           </div>
@@ -20,7 +17,7 @@ function Contacto() {
                 ¿Listo para llevar tu marca al siguiente nivel?
               </h5>
               <h3 class="fs-xl-10 fs-lg-8 fs-7 fw-bold text-capitalize">
-                Nuestro equipo estara complacido de atenderte.
+                Nuestro equipo estará complacido de atenderte.
               </h3>
               <form class="row g-3 align-items-center w-lg-75 mx-auto">
                 <div class="col-sm-center">
@@ -29,12 +26,12 @@ function Contacto() {
                     class="btn btn-primary btn-lg me-md-4 mb-3 mb-md-0 border-0 primary-btn-shadow"
                   >
                     <img
-                      class="input-box-icon"
+                      class="input-box-icon me-md-2"
                       src={mail}
                       width="17"
                       alt="mail"
                     />
-                    Escribenos
+                    Escríbenos
                   </a>
                 </div>
                 <div class="col-sm-center">
@@ -43,12 +40,12 @@ function Contacto() {
                     class="btn btn-primary btn-lg me-md-4 mb-3 mb-md-0 border-0 primary-btn-shadow"
                   >
                     <img
-                      class="input-box-icon"
+                      class="input-box-icon me-md-2"
                       src={whats}
                       width="17"
                       alt="whatsapp"
                     />
-                    Escribenos
+                    Escríbenos
                   </a>
                 </div>
               </form>
