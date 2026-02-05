@@ -26,7 +26,7 @@ function Header() {
             </h1>
             <p className="mb-4 fw-medium">
               soluciones estratégicas para que tu negocio llegue más lejos.
-              <br className="d-none d-xl-block" />
+              <br  />
               Nos aseguramos de que tu mensaje llegue a la audiencia correcta en
               el momento adecuado.
               <br className="d-none d-xl-block" />
