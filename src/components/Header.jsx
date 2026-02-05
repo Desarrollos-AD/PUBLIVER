@@ -12,6 +12,9 @@ function Header() {
               className="pt-7 pt-md-0 hero-img"
               src={hero}
               alt="hero-header"
+              height="900"
+              width="900"
+              fetchpriority="high"
             />
           </div>
           <div className="col-md-7 col-lg-6 text-md-start text-center py-6">
@@ -31,7 +34,7 @@ function Header() {
             <div className="text-center text-md-start">
               <a
                 className="btn btn-primary btn-lg me-md-4 mb-3 mb-md-0 border-0 primary-btn-shadow"
-                href="#testimonial"
+                href="#contacto"
                 role="button"
               >
                 Conoce más
@@ -42,20 +45,7 @@ function Header() {
                 tabindex="-1"
                 aria-labelledby="popupVideo"
                 aria-hidden="true"
-              >
-                <div className="modal-dialog modal-dialog-centered modal-lg">
-                  <div className="modal-content">
-                    <iframe
-                      className="rounded"
-                      height="500px"
-                      src="https://www.youtube.com/embed/_lhdhL4UDIo"
-                      title="YouTube video player"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen="allowfullscreen"
-                    ></iframe>
-                  </div>
-                </div>
-              </div>
+              ></div>
             </div>
           </div>
         </div>

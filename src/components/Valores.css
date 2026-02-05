@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
-
 :root {
     --card-hover-border-color: #fa0;
     --card-hover-glow-color: #fa07;
@@ -35,7 +33,6 @@ a:active {
     gap: 1rem;
     box-sizing: border-box;
     width: 100%;
-    max-width: 1000px;
     margin: 0 auto;
     padding: 1rem;
     overflow-x: scroll;
@@ -71,8 +68,8 @@ a:active {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    width: 225px;
-    height: 260px;
+    width: 315px;
+    height: 220px;
     border: 1px solid var(--card-border-color);
     border-radius: 1rem;
     box-shadow: 0 2px 0 2px var(--card-shadow-color), 0 0 0 3px #0000;

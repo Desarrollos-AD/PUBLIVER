@@ -8,8 +8,8 @@ function Footer() {
       </p>
 
       <p>
-        Consulta nuestros
-        <Link to="/terminos" className="text-primary hover:underline">
+        Consulta nuestros {" "}
+        <Link to="/terminos" className="text-primario hover:underline">
           Términos y Aviso legal
         </Link>
       </p>

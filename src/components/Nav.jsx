@@ -7,7 +7,6 @@ function Nav() {
 
   const goToSection = (id) => {
     if (location.pathname !== "/") {
-      // ir a inicio y guardar sección
       navigate("/", { state: { scrollTo: id } });
     } else {
       document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -21,7 +20,7 @@ function Nav() {
     >
       <div className="container">
         <button onClick={() => navigate("/")}>
-          <img src={logo} height="48" alt="logo" />
+          <img loading="lazy" width="800" height="800" src={logo} alt="logo" />
         </button>
         <button
           className="navbar-toggler"
@@ -35,7 +34,7 @@ function Nav() {
           <span className="navbar-toggler-icon"> </span>
         </button>
         <div
-          className="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0"
+          className="collapse navbar-collapse mt-4 mt-lg-0"
           id="navbarSupportedContent"
         >
           <ul className="navbar-nav ms-auto pt-2 pt-lg-0 font-base align-items-lg-center align-items-start">

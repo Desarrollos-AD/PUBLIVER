@@ -1,39 +1,33 @@
 import { useEffect, useRef } from "react";
-
+import validacion from "../assets/img/lista.png";
 import "./Valores.css";
-const carouselDuplicates = 3;
+const carouselDuplicates = 1;
 
 const valores = [
   {
     name: "Estrategia",
     body: "Diseñamos cada proyecto con enfoque analítico y visión comercial.",
-    img: "/src/assets/img/lista.png",
   },
   {
     name: "Creatividad",
     body: " Transformamos ideas en mensajes que conectan y generan impacto.",
-    img: "/src/assets/img/lista.png",
   },
   {
     name: "Compromiso",
     body: " Acompañamos a nuestros clientes en cada etapa del proceso.",
-    img: "/src/assets/img/lista.png",
   },
 
   {
     name: "Confianza",
     body: " Construimos relaciones transparentes y duraderas.",
-    img: "/src/assets/img/lista.png",
   },
   {
     name: "Innovación",
     body: "Aplicamos herramientas, métodos y soluciones actuales para cada mercado.",
-    img: "/src/assets/img/lista.png",
   },
   {
     name: "Responsabilidad",
     body: "Actuamos con ética, profesionalismo y enfoque en resultados reales.",
-    img: "/src/assets/img/lista.png",
   },
 ];
 
@@ -56,7 +50,7 @@ const getTouchMidpoint = (touches) => {
 export default function Valores() {
   const carouselRef = useRef(null);
   const contentRef = useRef(null);
-  const AUTO_SCROLL_SPEED = 1.5;
+  const AUTO_SCROLL_SPEED = 1;
 
   useEffect(() => {
     const carousel = carouselRef.current;
@@ -86,7 +80,7 @@ export default function Valores() {
       if (carouselHasMouse || carouselTouches > 0) {
         scrollDelta = lerp(scrollDelta, 0, 0.2);
       } else if (!prefersReducedMotion.matches) {
-        scrollDelta = lerp(scrollDelta, AUTO_SCROLL_SPEED, 0.08);
+        scrollDelta = lerp(scrollDelta, AUTO_SCROLL_SPEED, 0.05);
       }
 
       requestAnimationFrame(updateScroll);
@@ -187,7 +181,7 @@ export default function Valores() {
           {valores.map((lang) => (
             <div className="valores__card" key={lang.name}>
               <div className="titulo">
-                <img src={lang.img} alt="Icono validación" />
+                <img loading="lazy" width="800"  height="800" src={validacion} alt="Icono validación" />
                 <h3>{lang.name}</h3>
               </div>
               <p>{lang.body}</p>
